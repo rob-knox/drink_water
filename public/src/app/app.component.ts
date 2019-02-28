@@ -10,6 +10,8 @@ export class AppComponent {
   facts: Facts[];
   amount_of_water = {pounds: ''};
   weight: number;
+  min = document.querySelector('.min').innerHTML();
+  convertedIntoMin = min * 1000;
   
   constructor() {}
   ngOnInit() {
@@ -27,5 +29,10 @@ export class AppComponent {
         tip: 'Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature.',
       }
     ]
+  }
+  onSubmit() {
+    setInterval(function() {
+      alert("Drink Water");
+    }, convertedIntoMin);
   }
 }

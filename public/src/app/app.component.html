@@ -9,7 +9,7 @@ div {
       <div class="row">
         <div class="col-sm-6 center">
           <h3>Did You Know?</h3>
-          <p>Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature</p>
+          <p>{{ facts[0].tip }}</p>
         </div>
         <div class="col-sm-6 center">
           <h2>Drink More</h2>
@@ -18,7 +18,7 @@ div {
             <div class="row">
               <div class="col-sm-5">
                 <h6>How much do you weigh?</h6>
-                <input type="text" [(ngModel)]="weight" class="form-control" />
+                <input type="text" name="weight" [(ngModel)]="weight" class="form-control" />
                 <p class="pt-0">{{weight | json}} oz of water</p>
               </div>
               <div class="col-sm-7">
