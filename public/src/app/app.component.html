@@ -1,8 +1,43 @@
-<script>
-var min = document.querySelector('.min').innerHTML();
-var convertedIntoMin = min * 1000;
+<style>
+div {
+  border: 1px dotted pink;
+}
+</style>
 
-setinterval(function() {
-  alert("Drink Water");
-}, convertedIntoMin);
-</script>
+<div class="container-fluid">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-6 center">
+          <h3>Did You Know?</h3>
+          <p>Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature</p>
+        </div>
+        <div class="col-sm-6 center">
+          <h2>Drink More</h2>
+          <h1>Water!</h1>
+          <form (submit)="onSubmit()">
+            <div class="row">
+              <div class="col-sm-5">
+                <h6>How much do you weigh?</h6>
+                <input type="text" [(ngModel)]="weight" class="form-control" />
+                <p class="pt-0">{{weight | json}} oz of water</p>
+              </div>
+              <div class="col-sm-7">
+                <h6>How often do you want us to remind you?</h6>
+               <div class="row">
+                <div class="col-3">Every</div>
+                <div class="col-6 p-0 m-0"><input type="text" name="minutes" class="min form-control" /></div>
+                <div class="col-3">minutes</div>
+              </div>
+            </div>
+
+          </div>
+        </form>
+          <div class="center">
+            <h5>* Keep this page open in your browser so we can remind you to drink water.</h5>
+            <button class="btn btn-secondary">Set Timer</button>
+          </div>
+        </div>
+
+      </div>
+  </div> <!-- container div -->
+</div>

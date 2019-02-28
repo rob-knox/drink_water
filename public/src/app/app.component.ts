@@ -9,6 +9,7 @@ import { Facts } from './models/Facts';
 export class AppComponent {
   facts: Facts[];
   amount_of_water = {pounds: ''};
+  weight: number;
   
   constructor() {}
   ngOnInit() {
@@ -27,5 +28,4 @@ export class AppComponent {
       }
     ]
   }
-  
 }
