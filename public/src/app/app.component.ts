@@ -6,14 +6,13 @@ import { Facts } from './models/Facts';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   facts: Facts[];
-  amount_of_water = {pounds: ''};
   weight: number;
-  min = document.querySelector('.min').innerHTML();
-  convertedIntoMin = min * 1000;
-  
+  min: any;
+    
   constructor() {}
+
   ngOnInit() {
     this.facts = [
       {
@@ -29,10 +28,19 @@ export class AppComponent {
         tip: 'Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature.',
       }
     ]
+
+
   }
   onSubmit() {
+    var minutes = this.min * 1000 * 60;
+    console.log(this.min);
     setInterval(function() {
       alert("Drink Water");
-    }, convertedIntoMin);
+    }, minutes);
   }
+
+  inputChange(min:string):void{this.min=min}
+
+
+
 }
