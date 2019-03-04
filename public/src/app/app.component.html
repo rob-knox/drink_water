@@ -5,7 +5,8 @@
       <div class="row">
         <div class="col-sm-6 center">
           <h3>Did You Know?</h3>
-          <p>{{ facts[0].tip }}</p>
+          <p [slides]='currentSlide.tip'></p>
+          
         </div>
         <div class="col-sm-6 center">
           <h2>Drink More</h2>
@@ -18,7 +19,7 @@
                 <p class="pt-0">{{weight | json}} oz of water</p>
               </div>
               <div class="col-sm-7">
-                <h6>How often do you want us to remind you?</h6>
+               <h6>How often do you want us to remind you?</h6>
                <div class="row">
                 <div class="col-3">Every</div>
                 <div class="col-6 p-0 m-0"><input type="text" name="minutes" class="min form-control" (ngModelChange)="inputChange($event)" [ngModel]="min" /></div>

@@ -17,18 +17,25 @@ export class AppComponent implements OnInit {
     this.facts = [
       {
         id: 1,
-        tip: 'Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature.',
+        tip: 'Tip 1',
       },
       {
         id: 2,
-        tip: 'Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature.',
+        tip: 'Tip 2',
       },
       {
         id: 3,
-        tip: 'Drinking Water Helps Maintain the Balance of Body Fluids. Your body is composed of about 60% water. The functions of these bodily fluids include digestion, absorption, circulation, creation of saliva, transportation of nutrients, and maintenance of body temperature.',
+        tip: 'Tip 3',
       }
     ]
-
+    // Cycle through facts
+    let slides = this.facts;
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 3000);
+    function nextSlide() {
+      currentSlide = (currentSlide+1)%slides.length;
+      slides[currentSlide].tip;
+    }
 
   }
   onSubmit() {
@@ -40,7 +47,5 @@ export class AppComponent implements OnInit {
   }
 
   inputChange(min:string):void{this.min=min}
-
-
 
 }

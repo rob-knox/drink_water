@@ -1,12 +1,9 @@
 html, body, .container, .container-fluid {
     min-height: 100% !important;
 }
-
 .container-fluid {
     background-color: #29abe2;
 }
-
-
 .center {
     text-align: center;
 }
